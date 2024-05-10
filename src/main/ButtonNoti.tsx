@@ -2,7 +2,7 @@ import * as React from 'react';
 import Menu from '@mui/material/Menu';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { Badge, IconButton, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import SensorDoorIcon from '@mui/icons-material/SensorDoor';
+import SensorDoorOutlinedIcon from '@mui/icons-material/SensorDoorOutlined';
 
 export interface Data {
     id: number;
@@ -68,11 +68,11 @@ export default function PositionedMenu({ userNodos }: UserNodos) {
                     <ListItemButton key={nodo.id}>
                         
                         <ListItemIcon>
-                            <SensorDoorIcon />
+                            <SensorDoorOutlinedIcon />
                         </ListItemIcon>
                         <ListItemText
                             primary={nodo.valor}
-                            secondary={nodo.fechahora.split('T')[1].split('.')[0]}
+                            secondary={new Date(nodo.fechahora).toLocaleTimeString()}
                         />
                     </ListItemButton>
                 ))}

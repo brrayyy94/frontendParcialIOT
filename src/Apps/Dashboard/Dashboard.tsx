@@ -40,7 +40,7 @@ const Dashboard = () => {
 
     return (
         <Box className="flex flex-row">
-            <Container disableGutters className="bg-blue-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 ">
+            <Container disableGutters className="bg-orange-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 ">
                 <Box
                     display="flex"
                     flexDirection="row"

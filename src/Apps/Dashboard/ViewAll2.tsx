@@ -95,7 +95,7 @@ const ViewAll = () => {
                     <ArrowBackIcon color="primary" style={{ fontSize: 40 }} />
                 </IconButton>
             </Box>
-            <Container className="bg-amber-950 flex flex-col justify-center rounded-lg items-center max-w-3x1">
+            <Container className="bg-orange-200 flex flex-col justify-center rounded-lg items-center max-w-3x1">
                 {!loading && (
                     <>
                         <Box className="bg-white flex flex-row justify-around items-center w-full rounded-lg mt-10 mb-10 ">

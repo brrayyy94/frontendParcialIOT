@@ -26,7 +26,7 @@ const DashboardAdmin = () => {
             }
             setUserNodos(response.data.nodos);
         }
-            getAllUserNodos();
+        getAllUserNodos();
     }, []);
 
     // const [value, setValue] = useState('');
@@ -36,7 +36,7 @@ const DashboardAdmin = () => {
 
     return (
         <Box className="flex flex-row">
-            <Container disableGutters className="bg-blue-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 ">
+            <Container disableGutters className="bg-orange-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 ">
                 <Box
                     display="flex"
                     flexDirection="row"
@@ -62,14 +62,14 @@ const DashboardAdmin = () => {
                                     image={logo}
                                 />
                                 <Grid container justifyContent="space-between" alignItems={'flex-end'}>
-                                    <Grid item className="flex flex-col mt-3">
+                                    <Grid item className="flex flex-row mt-3">
                                         <Button
                                             variant="outlined"
                                             onClick={() => navigate(`${nodo.idnodo}`)}
                                             sx={{ alignSelf: 'left', fontWeight: 600 }}
                                             className='mb-1'
                                         >
-                                            Nodo {nodo.idnodo}
+                                            Nodo {nodo.idnodo} - Id usuario {nodo.usuario_id}
                                         </Button>
                                     </Grid>
                                     <Grid item className="align-bottom">
