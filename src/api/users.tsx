@@ -4,8 +4,7 @@ export const AuthService = {
         login: '/login',
         register: '/register',
         getNodos: '/',
-        accionTapa:'/accion',
-        dispensar: '/dispensar',
-        tienda: '/tienda',
+        getAllNodos: '/allNodos',
+        getEstadoPuerta: '/estadoPuerta',
     },
 };

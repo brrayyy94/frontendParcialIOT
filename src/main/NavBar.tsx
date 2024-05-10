@@ -75,7 +75,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export interface UserNodos {
     id: number;
-    estadoTapa: string;
+    valor: string;
     fechahora: string;
 }
 
@@ -97,11 +97,11 @@ const NavBar = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         const getAllUserNodos = async () => {
             try {
-                const response = await axios.get(`${AuthService.baseUrl}${AuthService.endpoints.accionTapa}`);
+                const response = await axios.get(`${AuthService.baseUrl}${AuthService.endpoints.getEstadoPuerta}`);
                 if (!response.data) {
                     throw new Error('No se encontraron notificaciones');
                 }
-                console.log(response.data.fechahora);
+                console.log(response.data);
                 setUserNodos(response.data);
             } catch (error) {
                 const res1 = (error as AxiosError).response?.status;
@@ -117,7 +117,7 @@ const NavBar = ({ children }: { children: ReactNode }) => {
         // Enviar notificación si el tamaño del array ha aumentado
         if (userNodos && userNodos.length > prevSize) {
             console.log('Se ha añadido una nueva notificación!');
-            toast.warning('Nuevo estado de la Tapa!');
+            toast.warning('Nuevo estado de la puerta!');
             // Aquí puedes agregar tu lógica para enviar la notificación, por ejemplo, utilizando alguna librería de notificaciones como react-toastify
         }
         // Actualizar el tamaño previo del array

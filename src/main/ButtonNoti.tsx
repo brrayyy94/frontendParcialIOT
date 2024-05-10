@@ -2,11 +2,11 @@ import * as React from 'react';
 import Menu from '@mui/material/Menu';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { Badge, IconButton, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import PetsIcon from '@mui/icons-material/Pets';
+import SensorDoorIcon from '@mui/icons-material/SensorDoor';
 
 export interface Data {
     id: number;
-    estadoTapa: string;
+    valor: string;
     fechahora: string;
 }
 interface UserNodos {
@@ -68,10 +68,10 @@ export default function PositionedMenu({ userNodos }: UserNodos) {
                     <ListItemButton key={nodo.id}>
                         
                         <ListItemIcon>
-                            <PetsIcon />
+                            <SensorDoorIcon />
                         </ListItemIcon>
                         <ListItemText
-                            primary={nodo.estadoTapa}
+                            primary={nodo.valor}
                             secondary={nodo.fechahora.split('T')[1].split('.')[0]}
                         />
                     </ListItemButton>

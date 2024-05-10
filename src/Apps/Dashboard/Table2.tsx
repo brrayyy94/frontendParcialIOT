@@ -5,20 +5,20 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-export interface Order {
+export interface Order2 {
     id: number;
     idnodo: number;
-    estadoPuerta: number;
     distancia: number;
+    presencia: string;
     fechahora: string;
 }
 
 // Generate Order Data
 interface TablesProps {
-    orders: Order[]
+    orders2: Order2[]
 }
 
-export default function Tables({orders}: TablesProps) {
+export default function Tables({orders2}: TablesProps) {
     return (
         <React.Fragment>
             <Table stickyHeader>
@@ -26,12 +26,13 @@ export default function Tables({orders}: TablesProps) {
                     <TableRow>
                         <TableCell align="center" style={{ fontSize: 'larger' }}>id</TableCell>
                         <TableCell align="center" style={{ fontSize: 'larger' }}>idnodo</TableCell>
-                        <TableCell align="center" style={{ fontSize: 'larger' }}>value</TableCell>
+                        <TableCell align="center" style={{ fontSize: 'larger' }}>distancia</TableCell>
+                        <TableCell align="center" style={{ fontSize: 'larger' }}>presencia</TableCell>
                         <TableCell align="center" style={{ fontSize: 'larger' }}>fechahora</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {orders.map((order) => (
+                {orders2.map((order) => (
                         <TableRow key={order.id}>
                             <TableCell align="center" style={{ fontSize: 'larger' }}>
                                 {order.id}
@@ -40,7 +41,10 @@ export default function Tables({orders}: TablesProps) {
                                 {order.idnodo}
                             </TableCell>
                             <TableCell align="center" style={{ fontSize: 'larger' }}>
-                                {order.estadoPuerta || order.distancia}
+                                {order.distancia}
+                            </TableCell>
+                            <TableCell align="center" style={{ fontSize: 'larger' }}>
+                                {order.presencia}
                             </TableCell>
                             <TableCell align="center" style={{ fontSize: 'larger' }}>
                                 {order.fechahora.substr(0, 10)}

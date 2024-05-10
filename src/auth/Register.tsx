@@ -11,7 +11,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { AuthService } from '../api/users';
 import { toast } from 'react-toastify';
 import Autocomplete from '@mui/material/Autocomplete';
-const options = ['Cliente', 'Tienda'];
+const options = ['Cliente', 'admin'];
 
 
 export default function Register() {
