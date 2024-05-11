@@ -35,7 +35,7 @@ const DashboardAdmin = () => {
     // const [valueError, setValueError] = useState(false);
 
     return (
-        <Box className="flex flex-row">
+        <Box className="flex flex-col">
             <Container disableGutters className="bg-orange-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 ">
                 <Box
                     display="flex"
@@ -84,6 +84,21 @@ const DashboardAdmin = () => {
                         </Grid>
                     ))}
                 </Grid>
+            </Container>
+            <Container className="bg-orange-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 mt-10">
+                <Typography variant="h3" className='mt-5 font-bold'>Garage Door</Typography>
+                <Container className="bg-white flex flex-row justify-around items-center w-full rounded-lg mt-5 ">
+                    <Typography variant="h6" className='mt-2 mb-2 font-bold flex flex-col'>Bienvenido a la sección de administrador</Typography>
+                </Container>
+                <Container className="bg-white flex flex-row justify-around items-center w-full rounded-lg mt-5 mb-5 ">
+                    <Typography variant="subtitle1" className='mt-5 mb-5 flex flex-col'>En esta sección podrás visualizar los nodos
+                        y los sensores de todos los usuarios por medio de tablas y una gráfica para los datos de distancia del sensor ultrasonido. En el dashboard que
+                        se encuentra en esta misma página en la parte superior se mostrarán los nodos que existan en estos momentos y el id del usuario al que pertenecen.
+                        Para acceder a la información de cada nodo, da click en el botón "Nodo # - ID USUARIO #".
+                        En caso de que no existan datos en alguno de los sensores, la página se quedará cargando y se envía una notificación "No se encontró el recurso solicitado".
+                        Por último, esperamos que disfrutes de la experiencia de usuario en nuestro sitio web."
+                    </Typography>
+                </Container>
             </Container>
         </Box>
     );

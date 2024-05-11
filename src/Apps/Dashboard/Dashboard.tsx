@@ -80,7 +80,7 @@ const Dashboard = () => {
             <Box className="flex flex-col justify-end">
                 {/* Notifications */}
                 <PositionedMenu
-                        userNodos={userNodos2} />
+                    userNodos={userNodos2} />
             </Box>
             <Container disableGutters className="bg-orange-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 ">
                 <Box
@@ -133,36 +133,20 @@ const Dashboard = () => {
             </Container>
             <Container className="bg-orange-200 flex flex-col justify-center rounded-lg items-center max-w-3x1 pl-5 pr-5 mt-10">
                 <Typography variant="h3" className='mt-5 font-bold'>Garage Door</Typography>
-                <Typography variant="body1" className='mt-5 mb-5'>Contexto:
-                    Trabajaremos en esta evaluación con el contexto trabajado en los exámenes anteriores, de tal
-                    manera que ya tenemos unos sensores conectados a una plataforma hardware y con los datos
-                    entregados por dichos sensores hemos generado un JSON con la información y hemos enviado
-                    esos datos al servidor, los hemos procesado, los hemos almacenado y hemos implementado
-                    estados y actuaciones. En el servidor debemos tener en este momento datos de dos nodos
-                    distintos.
-                    Desarrollaremos una aplicación web para interactuar con los usuarios. El objetivo es resolver los
-                    siguientes requerimientos.
-                    Requerimientos
-                    1. Desarrollar en el servidor las operaciones REST que se requieran para satisfacer las
-                    necesidades de la aplicación web a desarrollar.
-                    2. Desarrollar una aplicación web que cumpla (mínimo) con los siguientes requerimientos:
-                    a. Se tendrán dos tipos de usuario: el usuario administrador y el usuario cliente.
-                    b. Cada usuario cliente deberá tener asociado un nodo.
-                    c. Deberá tener una página de inicio con la información general del sistema y
-                    además se muestre un formulario para el ingreso de los usuarios (Página de
-                    login)
-                    d. Cuando ingrese el usuario administrador se le dará la opción de seleccionar uno
-                    de los nodos.
-                    e. Cuando se seleccione un nodo deberá mostrársele todos los datos y
-                    alertas/estados asociados a ese nodo en forma de tabla y de manera gráfica.
-                    f. Cuando ingrese el usuario cliente se le mostrarán los últimos datos y alertas de
-                    su nodo.
-                    g. La aplicación web hará uso de las operaciones REST desarrolladas en el punto
-                    anterior.
-                    Requerimientos logísticos:
-                    a. Debe entregar un documento presentación en donde explique con detalle las
-                    operaciones REST desarrolladas y su relación con la aplicación.
-                    b. Deberá sustentar todo el desarrollo ante el profesor.</Typography>
+
+                <Container className="bg-white flex flex-row justify-around items-center w-full rounded-lg mt-5 ">
+                    <Typography variant="h6" className='mt-2 mb-2 font-bold flex flex-col'>Bienvenido a la sección de cliente</Typography>
+                </Container>
+                <Container className="bg-white flex flex-row justify-around items-center w-full rounded-lg mt-5 mb-5 ">
+                    <Typography variant="subtitle1" className='mt-5 mb-5'>En este sitio web como usuario cliente podrás llevar control de tus nodos
+                        y los sensores asociados a ellos por medio de tablas y una gráfica para los datos de distancia del sensor ultrasonido. En esta misma página puedes
+                        visualizar los nodos que tengas creados, puedes acceder a la información de cada uno dando click en el botón "Nodo #". 
+                        En caso de que no tengas datos en alguno de los sensores en el día, la página se quedará cargando y se envia una notificación "No se encontró el recurso solicitado".
+                        También recibirás notificaciones del estado de tu puerta en el botón de la campana en la parte superior izquierda. 
+                        Para visualizar las notificaciones del estado de tu puerta debes volver a cargar la pagina, estamos mejorando para que se actualice en tiempo real.
+                        Por último, esperamos que disfrutes de la experiencia de usuario en nuestro sitio web."
+                    </Typography>
+                </Container>
             </Container>
         </Box>
     );
