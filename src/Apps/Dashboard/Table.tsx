@@ -43,7 +43,7 @@ export default function Tables({orders}: TablesProps) {
                                 {order.estadoPuerta || order.distancia}
                             </TableCell>
                             <TableCell align="center" style={{ fontSize: 'larger' }}>
-                                {order.fechahora.substr(0, 10)}
+                                {new Date(order.fechahora).toLocaleString()}
                             </TableCell>
                         </TableRow>
                     ))}

@@ -14,14 +14,7 @@ import { ReactNode } from 'react';
 import { AccountCircle } from '@mui/icons-material';
 import { Logout } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import PositionedMenu from './ButtonNoti';
-import axios from 'axios';
-import { useState } from 'react';
-import { AuthService } from '../api/users';
-import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { useEffect } from 'react';
-import { AxiosError } from 'axios';
+import PositionedMenu from '../Apps/Dashboard/ButtonNoti';
 
 const drawerWidth: number = 240;
 
@@ -87,42 +80,7 @@ const NavBar = ({ children }: { children: ReactNode }) => {
     };
     const handleOnLogout = () => {
         navigate("/");
-    }
-
-    const { id } = useParams();
-    const [userNodos, setUserNodos] = useState([]);
-
-    const [prevSize, setPrevSize] = useState(0);
-
-    useEffect(() => {
-        const getAllUserNodos = async () => {
-            try {
-                const response = await axios.get(`${AuthService.baseUrl}${AuthService.endpoints.getEstadoPuerta}`);
-                if (!response.data) {
-                    throw new Error('No se encontraron notificaciones');
-                }
-                console.log(response.data);
-                setUserNodos(response.data);
-            } catch (error) {
-                const res1 = (error as AxiosError).response?.status;
-                if (res1 === 404) {
-                    console.log('No hay notificaciones del dia de hoy');
-                }
-            }
-        }
-        getAllUserNodos();
-    }, [id]);
-
-    useEffect(() => {
-        // Enviar notificación si el tamaño del array ha aumentado
-        if (userNodos && userNodos.length > prevSize) {
-            console.log('Se ha añadido una nueva notificación!');
-            toast.warning('Nuevo estado de la puerta!');
-            // Aquí puedes agregar tu lógica para enviar la notificación, por ejemplo, utilizando alguna librería de notificaciones como react-toastify
-        }
-        // Actualizar el tamaño previo del array
-        setPrevSize(userNodos ? userNodos.length : 0);
-    }, [userNodos, prevSize]);
+    };
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -155,10 +113,6 @@ const NavBar = ({ children }: { children: ReactNode }) => {
                     >
                         Dashboard
                     </Typography>
-
-                    {/* Notifications */}
-                    <PositionedMenu
-                        userNodos={userNodos} />
                     <IconButton color="inherit">
                         <AccountCircle />
                     </IconButton>

@@ -3,7 +3,9 @@ export const ManageNodosService = {
     endpoints: {
         getNodos: '/',
         getMagnetico: '/magnetico',
+        getMagneticoAdmin: '/magnetico/admin',
         getUltrasonido: '/ultrasonido',
+        getUltrasonidoAdmin: '/ultrasonido/admin',
         postMagnetico: '/magnetico',
         postUltrasonido: '/ultrasonido',
         deleteMagnetico: '/magnetico',

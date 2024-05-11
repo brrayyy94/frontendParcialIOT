@@ -18,7 +18,7 @@ interface TablesProps {
     orders2: Order2[]
 }
 
-export default function Tables({orders2}: TablesProps) {
+export default function Tables({ orders2 }: TablesProps) {
     return (
         <React.Fragment>
             <Table stickyHeader>
@@ -32,7 +32,7 @@ export default function Tables({orders2}: TablesProps) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {orders2.map((order) => (
+                    {orders2.map((order) => (
                         <TableRow key={order.id}>
                             <TableCell align="center" style={{ fontSize: 'larger' }}>
                                 {order.id}
@@ -47,7 +47,7 @@ export default function Tables({orders2}: TablesProps) {
                                 {order.presencia}
                             </TableCell>
                             <TableCell align="center" style={{ fontSize: 'larger' }}>
-                                {order.fechahora.substr(0, 10)}
+                                {new Date(order.fechahora).toLocaleString()}
                             </TableCell>
                         </TableRow>
                     ))}

@@ -150,7 +150,7 @@ const ViewAll = () => {
                                 <LineChart
                                     xAxis={[{
                                         id: 'Hora',
-                                        data: userNodoMagnetico.map(entry => new Date(entry.fechahora)),
+                                        data: userNodoUltrasonido.map(entry => new Date(entry.fechahora)),
                                         label: 'Hora',
                                         valueFormatter: (entry) => format(entry, 'HH:mm:ss'),
                                     },

@@ -47,8 +47,8 @@ const ViewAll = () => {
             console.log(id);
             try {
                 setLoading(true);
-                const response = await axios.get(`${ManageNodosService.baseUrl}${ManageNodosService.endpoints.getMagnetico}/${id}`);
-                const response2 = await axios.get(`${ManageNodosService.baseUrl}${ManageNodosService.endpoints.getUltrasonido}/${id}`);
+                const response = await axios.get(`${ManageNodosService.baseUrl}${ManageNodosService.endpoints.getMagneticoAdmin}`);
+                const response2 = await axios.get(`${ManageNodosService.baseUrl}${ManageNodosService.endpoints.getUltrasonidoAdmin}`);
                 if (!response.data || !response2.data) {
                     // Si no se encuentran datos, muestra una vista "no hay datos"
                     console.log('No se encontraron datos para el usuario');
@@ -130,7 +130,16 @@ const ViewAll = () => {
                             <Container className="flex bg-white max-h-96 overflow-y-auto rounded-xl">
                                 {userNodoMagnetico && (
                                     <Orders
-                                        orders={userNodoMagnetico}
+                                        orders={userNodoMagnetico.map(entry => {
+                                            return {
+                                                id: entry.id,
+                                                usuario_id: entry.usuario_id,
+                                                idnodo: entry.idnodo,
+                                                estadoPuerta: entry.estadoPuerta,
+                                                fechahora: entry.fechahora
+                                            }
+                                        })
+                                        }
                                     />
                                 )}
                             </Container>
@@ -146,11 +155,11 @@ const ViewAll = () => {
                             )}
                         </Container>
                         <div className="bg-white w-full mb-5 rounded-xl">
-                            {userNodoMagnetico && (
+                            {userNodoUltrasonido && (
                                 <LineChart
                                     xAxis={[{
                                         id: 'Hora',
-                                        data: userNodoMagnetico.map(entry => new Date(entry.fechahora)),
+                                        data: userNodoUltrasonido.map(entry => new Date(entry.fechahora)),
                                         label: 'Hora',
                                         valueFormatter: (entry) => format(entry, 'HH:mm:ss'),
                                     },

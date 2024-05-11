@@ -6,7 +6,7 @@ import axios from 'axios';
 import { AuthService } from '../../api/users';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/golden.jpg';
+import logo from '../../assets/garagedoor.png';
 import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
@@ -44,7 +44,7 @@ const DashboardAdmin = () => {
                     alignItems="center"
                     className='bg-white w-full rounded-lg mt-10 '>
                     <Grid item>
-                        <Typography variant="h3">Nodos</Typography>
+                        <Typography variant="h3" className='font-bold'>Nodos</Typography>
                     </Grid>
                 </Box>
                 <Grid container

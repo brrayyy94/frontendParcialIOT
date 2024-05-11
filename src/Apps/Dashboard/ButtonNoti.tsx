@@ -47,11 +47,11 @@ export default function PositionedMenu({ userNodos }: UserNodos) {
                 onClose={handleClose}
                 anchorOrigin={{
                     vertical: 'bottom',
-                    horizontal: 'right',
+                    horizontal: 'left',
                 }}
                 transformOrigin={{
                     vertical: 'top',
-                    horizontal: 'right',
+                    horizontal: 'left',
                 }}
                 PaperProps={{
                     style: {
